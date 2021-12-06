@@ -1,5 +1,5 @@
 # Flask-Architecture
-This project has required python packages that's required in any flask normal or big project setup.
+This project has required python packages that's use in any flask normal or big project setup.
 
 Files and folder structure are easy to use and configurable.
 
