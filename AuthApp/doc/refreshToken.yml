@@ -1,0 +1,25 @@
+summary: "User Refresh Token"
+description: "This is a simple API to get access token using refresh token."
+consumes:
+- "application/json"
+produces:
+- "application/json"
+tags:
+  - AuthApp
+security:
+- APIKeyHeader: [ 'Authorization' ]
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      properties:
+        data:
+          type: "object"
+          example: [{
+            "accessToken": "string"
+          }]
+        status:
+          type: "string"
+        message:
+          type: "string"
