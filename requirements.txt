@@ -5,6 +5,7 @@ attrs==21.2.0
 click==8.0.1
 flasgger==0.9.5
 Flask==2.0.1
+Flask-Admin==1.6.0
 flask-marshmallow==0.14.0
 Flask-Migrate==3.0.1
 flask-restx==0.5.1
@@ -30,3 +31,4 @@ PyYAML==5.4.1
 six==1.16.0
 SQLAlchemy==1.4.17
 Werkzeug==2.0.1
+WTForms==3.0.1

@@ -2,6 +2,8 @@ from dotenv import load_dotenv
 # To load environment variables
 load_dotenv()
 from flask import Flask
+from flask_admin import Admin
+from flask_admin.contrib.sqla import ModelView
 from settings.extension import db, migrate, ma, swagger
 from AuthApp.router import AuthApp
 from AuthApp import models
@@ -12,6 +14,12 @@ def create_app():
     # Flask app initialize
     app = Flask(__name__)
     app.config.from_pyfile('settings/configuration.py')
+
+    # Flask Admin
+    app.config['FLASK_ADMIN_SWATCH'] = 'cerulean'
+    admin = Admin(app, name='microblog', template_mode='bootstrap3')
+    admin.add_view(ModelView(models.User, db.session))
+    admin.add_view(ModelView(models.EmailHandler, db.session))
 
     # Blueprints
     app.register_blueprint(AuthApp, url_prefix='/auth')
