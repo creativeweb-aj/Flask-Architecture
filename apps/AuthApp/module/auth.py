@@ -1,5 +1,5 @@
 from flask import jsonify, request
-from AuthApp.models import User
+from apps.AuthApp.models import User
 from functools import wraps
 import jwt
 import os
@@ -7,7 +7,7 @@ import datetime
 from settings.extension import db
 from werkzeug.security import check_password_hash, generate_password_hash
 from settings.response import TokenType
-from AuthApp.module.email import EmailService
+from apps.AuthApp.module.email import EmailService
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 

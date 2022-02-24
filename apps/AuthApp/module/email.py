@@ -1,5 +1,5 @@
 import datetime
-from AuthApp.models import EmailHandler
+from apps.AuthApp.models import EmailHandler
 from settings.extension import db
 from flask import render_template_string
 import uuid

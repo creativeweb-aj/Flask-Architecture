@@ -5,8 +5,7 @@ from flask import Flask
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 from settings.extension import db, migrate, ma, swagger
-from AuthApp.router import AuthApp
-from AuthApp import models
+from apps.AuthApp.router import AuthApp, models
 
 
 # Flask App initialize with extensions and run
@@ -17,9 +16,9 @@ def create_app():
 
     # Flask Admin
     app.config['FLASK_ADMIN_SWATCH'] = 'cerulean'
-    admin = Admin(app, name='microblog', template_mode='bootstrap3')
-    admin.add_view(ModelView(models.User, db.session))
-    admin.add_view(ModelView(models.EmailHandler, db.session))
+    admin = Admin(app, name='Flask Admin Panel', template_mode='bootstrap4')
+    admin.add_view(ModelView(models.User, db.session, category='Auth'))
+    admin.add_view(ModelView(models.EmailHandler, db.session, category='Auth'))
 
     # Blueprints
     app.register_blueprint(AuthApp, url_prefix='/auth')

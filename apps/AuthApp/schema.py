@@ -1,6 +1,5 @@
-from AuthApp.models import User
+from apps.AuthApp.models import User
 from settings.extension import ma
-from marshmallow.exceptions import ValidationError
 
 
 # Create schemas for models

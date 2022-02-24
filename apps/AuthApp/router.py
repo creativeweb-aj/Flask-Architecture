@@ -2,8 +2,8 @@ import json
 from flask import Blueprint, Response, request
 from flasgger.utils import swag_from
 from settings.response import TokenType, StatusType, ResponseModal
-from AuthApp.schema import UserSchema, User
-from AuthApp.module.auth import RequiredAuthToken, GetJwtToken, createUser, loginUser
+from apps.AuthApp.schema import UserSchema, User
+from apps.AuthApp.module.auth import RequiredAuthToken, GetJwtToken, createUser, loginUser
 
 # Initialize blueprint and register it with flask app
 AuthApp = Blueprint('Auth App', __name__)

@@ -1,5 +1,4 @@
 from werkzeug.security import generate_password_hash
-
 from settings.extension import db, timestamp  # Database Object SQLAlchemy
 
 
